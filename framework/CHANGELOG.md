@@ -39,6 +39,7 @@ Yii Framework 2 Change Log
 - Enh #21079: Add the missing `@property` tags (mspirkov)
 - Bug #21094: Log a warning instead of silently ignoring `$isolationLevel` when `yii\db\Transaction::begin()` is called for a nested transaction (terabytesoftw)
 - Bug #21086: Allow integer and string keys in the `yii\base\Model::rules()` return annotation (terabytesoftw)
+- Bug #14521: Fix `yii\web\Request::getBodyParams()` ignoring the configured parser when the `Content-Type` header has whitespace before `;` (theluckystrike)
 
 2.0.55 May 09, 2026
 -------------------

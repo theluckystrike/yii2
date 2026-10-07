@@ -1175,6 +1175,10 @@ class RequestTest extends TestCase
             'json' => ['application/json', '{"foo":"bar","baz":1}', ['foo' => 'bar', 'baz' => 1]],
             'jsonp' => ['application/javascript', 'parseResponse({"foo":"bar","baz":1});', ['foo' => 'bar', 'baz' => 1]],
             'get' => ['application/x-www-form-urlencoded', 'foo=bar&baz=1', ['foo' => 'bar', 'baz' => '1']],
+            'json with parameter' => ['application/json; charset=UTF-8', '{"foo":"bar","baz":1}', ['foo' => 'bar', 'baz' => 1]],
+            // https://github.com/yiisoft/yii2/issues/14521
+            'json with space before parameter' => ['application/json ; charset=UTF-8', '{"foo":"bar","baz":1}', ['foo' => 'bar', 'baz' => 1]],
+            'json with tab before parameter' => ["application/json\t; charset=UTF-8", '{"foo":"bar","baz":1}', ['foo' => 'bar', 'baz' => 1]],
         ];
     }
 

@@ -609,8 +609,8 @@ class Request extends \yii\base\Request
 
             $rawContentType = $this->getContentType();
             if (($pos = strpos((string)$rawContentType, ';')) !== false) {
-                // e.g. text/html; charset=UTF-8
-                $contentType = substr($rawContentType, 0, $pos);
+                // e.g. text/html; charset=UTF-8 or text/html ; charset=UTF-8
+                $contentType = rtrim(substr($rawContentType, 0, $pos), " \t");
             } else {
                 $contentType = $rawContentType;
             }
